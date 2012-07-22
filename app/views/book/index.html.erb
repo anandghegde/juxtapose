@@ -1,0 +1,172 @@
+<section>
+       <div class="content-sec">
+      <h1 class="exp-text">
+       <!--  <p>Looking for a <span class="blue"><img src="images/faster.jpg" alt="faster" align="top"/></span>, <span class="blue"><img src="images/cheaper.jpg" alt="cheaper" /></span> and <span class="blue"><img src="images/smarter.jpg" alt="smarter" /></span> shopping experience?</p>-->
+      </h1>
+      <div class="main-orangehome">
+        <h6>Compare <span class="real-time">real-time results</span> from leading online bookstores in India <span class="real-time">in one place</span> </h6>
+        <div class="search-form" >
+          <div class="taj"></div>
+         <%= form_tag search_path, :method => :get do %>
+    <%= text_field_tag 'title', 'Title, Author or ISBN', {:class => "inp", :onfocus=>"focus_title()", :onblur=>"blur_title()", :style=>"background:url(/assets/search-bar.jpg)no-repeat left top ; "}%>
+    <%= hidden_field_tag 'isbn', '-1'%>
+    <%= submit_tag "Search" , :class=>"sub-btn" %>
+<% end %>
+         
+          <div class="clear"></div>
+        </div>
+        <!--<h2>Or choose a <span class="real-time">bestseller</span> below</h2>-->
+        <div class="pro-slider">
+
+      <div id = "Tabs" class = "TabArea">
+<ul class="basictab" id="tabheaders">
+<li class="selected" id = "li_tab1" onclick="tab('tab1')"><a><center>Latest</center></a></li>
+<li id = "li_tab2" onclick="tab('tab2')"><a><center>Fiction&nbsp;&nbsp;&nbsp;</center></a></li>
+<li id = "li_tab3" onclick="tab('tab3')"><a>Non-Fiction</center></a></li>
+<li id = "li_tab4" onclick="tab('tab4')"><a><center>Academic&nbsp;&nbsp;</center></a></li>
+</ul>
+
+<script>
+
+      document.getElementById('tabheaders').style.visibility = 'visible';
+
+</script>
+
+<div id="Content_Area">
+
+      <div id="tab1" class="tabbedcontent">
+
+            <div class="booksection"><!--slides Container!-->
+                  <div class="slide">
+                      <% i=1 %>
+                  <div class="RowContainer">
+                      <% @latest_books.each do |isbn, info_hash| %>
+                  <div class="Cell">
+                      <a href = "/isbn/<%=isbn%>">
+                        <div class="bookborder">
+                              <center>
+                              
+                                  <img class = "bookplaceholder" src="/assets/<%=isbn%>.jpg"/>
+           
+                              </center>
+
+                              
+                        </div>
+                        <%=info_hash[:title]%>
+                        <div class="authorname">
+                            <br><%=info_hash[:author]%>
+                        </div>
+                  </a>
+              </div>
+              <% if i==5%>
+                  </div><div class="RowContainer">
+              <% end %>
+              <% i=i+1 %>
+                    <% end %>
+                             </div>
+                  </div>
+            </div>
+      </div>
+
+      <div id="tab2" class="tabbedcontent" style="display: none;"> 
+            <div class="booksection"><!--slides Container!-->
+                      <% i=1 %>
+                  <div class="RowContainer">
+                      <% @fiction_books.each do |isbn, info_hash| %>
+                  <div class="Cell">
+                      <a href = "/isbn/<%=isbn%>">
+                        <div class="bookborder">
+                              <center>
+                              
+                                  <img class = "bookplaceholder" src="/assets/<%=isbn%>.jpg"/>
+           
+                              </center>
+
+                              
+                        </div>
+                        <%=info_hash[:title]%>
+                        <div class="authorname">
+                            <br><%=info_hash[:author]%>
+                        </div>
+                  </a>
+              </div>
+              <% if i==5%>
+                  </div><div class="RowContainer">
+              <% end %>
+              <% i=i+1 %>
+                    <% end %>
+                             </div>
+            </div>
+      </div>
+
+
+     
+      <div id="tab3" class="tabbedcontent" style="display: none;"> 
+            <div class="booksection"><!--slides Container!-->
+
+                      <% i=1 %>
+                  <div class="RowContainer">
+                      <% @non_fiction_books.each do |isbn, info_hash| %>
+                  <div class="Cell">
+                      <a href = "/isbn/<%=isbn%>">
+                        <div class="bookborder">
+                              <center>
+                              
+                                  <img class = "bookplaceholder" src="/assets/<%=isbn%>.jpg"/>
+           
+                              </center>
+
+                              
+                        </div>
+                        <%=info_hash[:title]%>
+                        <div class="authorname">
+                            <br><%=info_hash[:author]%>
+                        </div>
+                  </a>
+              </div>
+              <% if i==5%>
+                  </div><div class="RowContainer">
+              <% end %>
+              <% i=i+1 %>
+                    <% end %>
+                             </div>
+            </div>
+      </div>
+
+      <div id="tab4" class="tabbedcontent" style="display: none;"> 
+            <div class="booksection"><!--slides Container!-->
+                <p> <h4>Will Be Updated Soon :D</h4> </p>
+
+            </div>
+      </div>
+</div> <!--End of Content_Area Div-->
+</div> <!---End of Tabs Div-->
+<script>
+
+//    document.getElementById('Content_Area').style.border-top-left-radius = '0px';
+
+      $('#Content_Area').css({ 'border-top-left-radius': '0px'});
+
+</script>
+
+         </div>
+      </div>
+    </div>
+   </section>
+
+<script type="text/javascript">
+
+function tab(tab) {
+      document.getElementById('tab1').style.display = 'none';
+      document.getElementById('tab2').style.display = 'none';
+      document.getElementById('tab3').style.display = 'none';
+      document.getElementById('tab4').style.display = 'none';
+      document.getElementById('li_tab1').setAttribute("class", "");
+      document.getElementById('li_tab2').setAttribute("class", "");
+      document.getElementById('li_tab3').setAttribute("class", "");
+      document.getElementById('li_tab4').setAttribute("class", "");
+      document.getElementById('li_'+tab).setAttribute("class", "selected");
+      document.getElementById(tab).style.display = 'block';
+}
+
+</script>

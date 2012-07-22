@@ -1,0 +1,22 @@
+   <section>
+   		 <div class="content-sec" style=" padding: 3px 0;">
+	 <div class="main-orange"> 
+
+        <h6 style="padding-left:28px;">Suggestions for "<%=@search_key%>"</h6>
+ <div class="clear" style="padding-top:9px;"></div>
+<% @result.each do |item| %>
+	  <table width="94%" border="0" class="search_table"cellpadding="5" align="center">
+  <tr>
+    <td width="25%" align="center" style="border-right:#E3AC6C solid 1px;padding-top:10px;padding-bottom:10px;"><a href="/isbn/<%=item.isbn_13%>" ><img id="coverimg" class="sugimg" src=<%=item.image_link(:zoom=>5)%> style="width:70px; height:100px; border:1px #E3AC6C solid;" onerror= "this.src="/assets/not_available.jpg";"/></a></td>
+    <td width="75%" align="left" valign="top" style="padding-left:30px;">
+        <div style="padding-top:38px;">
+      <span class="suggest"> <a href="/isbn/<%=item.isbn_13%>" > <%= item.title%> </a> </span><br/>
+          <span style="font-size:12px; color:#666;">by <%= item.authors %> </br> ISBN: <%=item.isbn%></span>  
+      </div> <!-- End of div.38 --!>
+    </td>
+  </tr>
+</table>
+	  <% end %>
+  </div><!-- End of div.main-orange --!>
+    </div><!-- End of .contetn-sec --!>
+   </section>

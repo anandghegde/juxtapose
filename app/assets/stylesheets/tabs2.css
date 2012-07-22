@@ -1,0 +1,253 @@
+.tabbedcontent{
+position: absolute;
+width: 780px;
+height: 265px;
+left: 5px;
+/*border: 1px solid black;*/
+margin: 5px;
+
+}
+
+.TabArea{
+margin: 0 auto 0 -45px;
+
+}
+
+.booksection{
+position: absolute;
+width: 780px;
+height: 260px;
+left: 10px;
+/*border: 1px solid black;*/
+margin: 0px;
+}
+.RowContainer {
+        position:relative;
+        height:170px;
+        clear:both;
+	margin-bottom: 5px;
+        margin-top: 0px;
+}
+
+.RowContainer .Cell {
+        position:relative;
+        float:left;
+        height:90%;
+        width:140px;
+      /* border: 1px solid green;*/
+       text-align: center;
+       margin-left: auto;
+    margin-right: auto;
+       padding-left: 4px;
+       padding-right: 4px;
+       margin-top: 0px;
+       margin-bottom: 5px;
+       color: #087596;
+       font-size: 9.5pt;
+      font-family: "faricy-new-web",sans-serif;
+font-style: normal;
+font-weight: 500;
+       /*color: #055666;*/
+       
+}
+
+.RowContainer .Cell:hover {
+	color: #087596;
+}
+
+a:link {
+       text-decoration: none;
+       
+}
+
+a:visited {
+       text-decoration: none;
+       
+}
+
+.RowContainer .Cell a {
+color: #087596;
+}
+.RowContainer .Cell a:visited {
+color: #087596;
+}
+
+/*i{
+
+	font-size:7pt; 
+	color: #A2A2A3
+
+}*/
+
+
+.Cell .bookplaceholder{
+	 margin-left: auto;
+    margin-right: auto;
+		height: 95%;
+		height: 120px;
+		width: auto;
+		/*text-align: center;*/
+		padding: 3px;
+		margin: 3px;
+		position: relative;
+
+
+}
+
+.Cell .bookplaceholder:hover{
+-webkit-box-shadow: 0 0px 15px rgba(252, 88, 23, 0.75);
+-moz-box-shadow: 0 0px 15px rgba(252, 88, 23, 0.75); 
+box-shadow: 0px 0px 15px rgba(252, 88, 23, 0.75) ;
+
+}
+
+.Cell .bookplaceholder a:hover{
+/*-webkit-box-shadow: 0 0px 4px rgba(252, 88, 23, 0.75);
+-moz-box-shadow: 0 0px 4px rgba(252, 88, 23, 0.75); 
+box-shadow: 0px 0px 10px rgba(252, 88, 23, 0.75) ;
+*/
+outline: 1px dotted #FC5817;
+
+}
+
+.Cell .bookplaceholder a:visited{
+
+color: #FC5817;
+
+}
+
+.Cell:hover .bookplaceholder{
+-webkit-box-shadow: 0 0px 15px rgba(252, 88, 23, 0.75);
+-moz-box-shadow: 0 0px 15px rgba(252, 88, 23, 0.75); 
+box-shadow: 0px 0px 15px rgba(252, 88, 23, 0.75) ;
+}
+
+.slide{
+position: absolute;
+width: 780px;
+height: 260px;
+
+/*border: 1px solid red;*/
+
+}
+
+
+.basictab{
+/*padding: 3px 0;
+margin-left: 0;*/
+font-family: "faricy-new-web",Geneva;
+font-style: normal;
+font-weight: 400;
+margin-left: 40px;
+visibility: hidden;
+/*border-bottom: 1px solid gray;
+list-style-type: none;
+text-align: left;*/ /*set to left, center, or right to align the menu as desired*/
+}
+
+.basictab li{
+display: inline-block;
+clear: none;
+float: left;
+height: 50px;
+
+}
+
+.basictab li a{
+position: relative;
+margin-top: 25px;
+display: block;
+margin-left: 6px;
+line-height: 25px;
+padding-left: 10px;
+background: #33aae2;
+background-image: url('../images/darkbluetab.png');
+color: #ffffff;
+z-index: 10;
+/*border: 1px solid #ccc;*/
+border-bottom: 0px;
+cursor:pointer;
+/* The following four lines are to make the top left and top right corners of each tab rounded. */
+-moz-border-radius-topleft: 8px;
+border-top-left-radius: 8px;
+
+-moz-border-radius-topright: 8px;
+border-top-right-radius: 8px;
+/* end of rounded borders */
+
+width: 100px;
+color: #fffff;
+text-decoration: none;
+font-weight: bold;
+	font-size: 12pt;
+}
+
+
+.basictab li a:hover{
+background-image: url('../images/lightbluetab.png');
+cursor:pointer;
+}
+
+.basictab li.selected a{ /*selected tab effect*/
+position: relative;
+top: 0px;
+/*background-image: url('../images/whitetab.png');*/
+background: white;
+color: #0F6985;
+cursor:auto;
+}
+.titlefont{
+	font-size: 10pt;
+}
+
+.smallBr{
+font-size: 1px; 
+line-height: 0; 
+}
+#Content_Area { 
+font-size: 7pt;
+font-family: 'faricy-new-web';
+padding: 5px 5px;
+clear:both;
+overflow:hidden;
+line-height:12.5px;
+position: relative;
+top:0px;
+left: 46px;
+z-index: 5;
+height: 353px;
+overflow: hidden;
+width: 770px;
+/*background: #eef2f4;*/
+background: #ffffff;
+/* The following four lines are to make the top left and top right corners of each tab rounded. */
+-moz-border-radius-bottomleft: 8px;
+border-bottom-left-radius: 8px;
+-moz-border-radius-bottomright: 8px;
+border-bottom-right-radius: 8px;
+-moz-border-radius-topright: 8px;
+border-top-right-radius: 8px;
+border-top-left-radius: 8px;
+/* end of rounded borders */
+border-top: 0px;
+/*border: 3px dashed #00ADEC;*/
+}
+
+.authorname{
+font-size: 8pt;
+color: #5B7780;
+font-family: "faricy-new-web",sans-serif;
+font-style: normal;
+font-weight: 300;
+line-height: 60%;
+}
+
+.titlename{
+	text-align: center;
+       color: #087596;
+       font-size: 9.5pt;
+      font-family: "faricy-new-web",sans-serif;
+font-style: normal;
+font-weight: 500;
+}
+

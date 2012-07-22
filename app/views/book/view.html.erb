@@ -1,0 +1,93 @@
+   <section>
+       <div class="content-sec" style=" padding: 3px 0;">
+           <%= javascript_include_tag "jquery.tablesorter" %>
+           <script type="text/javascript" src="http://www.kryogenix.org/code/browser/sorttable/sorttable.js"></script> 
+        
+ 
+<div class="main-orange" style="width:832px;"> 
+ <div style="padding-left:16px; padding-right:12px; margin-left:-7px; background-color:#F4F8FB; margin-top:-8px;  -moz-border-radius:40px;-webkit-border-radius:40px;border-radius:40px;">
+<table width="800" border="0" bordercolor="#F18A45"   align="center" cellpadding="10" cellspacing="0" style="margin-top:20px; margin-bottom:10px;">
+  <tr>
+    <td width="180" height="238" align="left" style="padding-top:20px;padding-right:20px" >
+    
+  <img class="book pic" style="border:2px #bf540c solid; width:128px; height:200px;" src="<%=@book_img_url%>" />
+    </td>
+
+    <td><table width="560">
+    <tr>
+    <td colspan="2"  valign="top"   style=" padding-top:30px;">
+     
+  
+    <span class="white_head_text"> <%=@book_title %></span> <br/>
+    <span class="white_small_text"> <%=@book_author %></span>
+
+    </td></tr>
+
+    <tr> 
+    <td colspan="2" class="grey_small_txt" valign="top" style="padding-top:30px;">
+    <div id="book review" class="grey_small_txt" style="height:150px;width=60px;padding-right:10px; overflow:auto;"></div>
+    </td>
+    </tr>
+
+     </table> </td>
+
+  </tr>
+</table>
+ 
+<p align="right" style="margin-right:25px !important; font-family:'faricy-new-web';color:#8E9190;"> <i><a style="color:#8E9190;" target="_blank" href="http://www.goodreads.com/search?q=9781416502494">metadata by goodreads</a></i></p>
+<table width="800" border="0" align="center" cellpadding="5" cellspacing="4">
+<tr>
+    <td  align="left"> <h2 class="organge_head">Latest Results</h2> </td>
+  
+  </tr>
+  
+  <tr>
+      <td >
+        
+ 
+          <table  width="800" id="table_all_price"  border="0" bordercolor="#E83A00"  align="center" cellpadding="5" cellspacing="0"  class="sortable">
+               <thead> 
+                    <tr>
+                    <th align="center"  style="border:none;padding-bottom:5px; background:none !important;" class="sorttable_nosort"></th>
+                     <th id="price short" width='150' align="center"   class="sorttable_sortfwdind" style="border:none;padding-bottom:5px; cursor:pointer !important;" ><span class="organge_text">Price </span></th>
+                    <th  width='200' align="center"  class="" style="border:none;padding-bottom:5px; cursor:pointer !important;" ><span class="organge_text">Delivery Time</span></th>
+                     <th width='200' align="center"   style="border:none;padding-bottom:5px; cursor:default !important;" class=""><span class="organge_text">Cash On Delivery? </span> </th>
+                    <th width='200' align="center" style="border:none;padding-bottom:5px;background:none !important;" class="sorttable_nosort" > </th>
+                    </tr>
+                  </thead>
+                <tbody id="allpricestore">
+                
+                <% @prices.each do |item_hash|%>
+                    <% next if item_hash.last[:price]==999_999 %>
+                  <tr>      
+                         <td  width="180" class="started"><a href="<%= item_hash.last[:url]%>" target="_blank"><img width="80%" src=/assets/<%=item_hash.first%>.gif /></a>
+                        <div style="clear:both;"></div>
+                           
+                         </td>
+                         <td align="center" class="rupees"><span class="small-font"> </span>&nbsp;&nbsp;&nbsp;<%=item_hash.last[:price]%></td>
+                        <td sorttable_customkey="2.5" align="center"><%=!item_hash.last[:delivery]?"Not known":(item_hash.last[:delivery]==""?"Not known":item_hash.last[:delivery])%></td>
+                        <td align="center"> 
+                          Dont know yet 
+                        </td>
+                        <td align="center"><a href="<%= item_hash.last[:url]%>" target="_blank">Purchase</a></td>
+
+</tr>
+<% end %>
+
+    </tbody><tfoot></tfoot>
+               </table>
+            </td>
+  </tr>
+   
+   
+ </table>
+
+ </div>
+</div>
+ 
+
+
+  
+  </div>
+   </section>
+ 
