@@ -83,7 +83,7 @@ class Bookprice
 			{ :price => NOT_AVAILABLE, :url => url }
 		end
 	end
-=end
+
 	def search_indiaplaza(isbn)
 		url = "http://www.indiaplaza.com/searchproducts.aspx?sn=books&q=#{isbn}&affid=110550"
 		page = self.fetch_page(url)
@@ -99,7 +99,7 @@ class Bookprice
 			{ :price => NOT_AVAILABLE, :url => url }
 		end
 	end
-=begin
+
 	def search_nbcindia(isbn)
 		url = "http://www.nbcindia.com/Search-books.asp?q=#{isbn}"
 		page = self.fetch_page(url)
