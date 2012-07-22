@@ -11,7 +11,8 @@ class Bookprice
 	end
 
 	def perform
-        Rails.cache.fetch(self.isbn, :expires_in => 1.day){self.prices(self.isbn)}
+        prices = self.prices(self.isbn)
+        prices
 	end
 
 	def prices(isbn)
