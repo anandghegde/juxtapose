@@ -5,3 +5,7 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+require File.expand_path(File.join(File.dirname(__FILE__), '..', 'config', 'boot.rb'))
+
+Delayed::Backend::Mongoid::Job.create_indexes
+
