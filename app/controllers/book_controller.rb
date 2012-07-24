@@ -16,7 +16,7 @@ class BookController < ApplicationController
 
     def view
 		@isbn = canonicalize_isbn(params[:isbn])
-		@prices = Bookprice.new(:isbn => @isbn).perform
+		@prices = Bookprice.new(:isbn => @isbn).delay.perform
 		@book_title, @book_author, @book_img_url=Search.new(@isbn).get_book_details
 	end
 

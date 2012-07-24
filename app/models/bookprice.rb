@@ -1,5 +1,6 @@
 class Bookprice
 	attr_accessor :isbn
+    @@logger = Logger.new(STDOUT)
 	NOT_AVAILABLE=999_999
 	def initialize(given_isbn)
 		self.isbn = self.check_isbn(given_isbn)
@@ -11,6 +12,7 @@ class Bookprice
 	end
 
 	def perform
+        @@logger.info("Performing job for #{self.isbn}"
         Rails.cache.fetch("#{self.isbn}", :expires_in => 1.day){self.prices(self.isbn)}
 	end
 

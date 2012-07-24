@@ -10,6 +10,8 @@ gem 'kue'
 gem 'slim'
 gem 'therubyracer'
 gem 'twitter-bootstrap-rails'
+gem 'delayed_job'
+gem 'delayed_job_mongoid'
 
 # Gems used only for assets and not required
 # in production environments by default.
