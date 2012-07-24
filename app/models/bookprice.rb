@@ -1,4 +1,4 @@
-class Bookprice
+class Bookprice < ActiveRecord::Base
 	attr_accessor :isbn
     @@logger = Logger.new(STDOUT)
 	NOT_AVAILABLE=999_999
