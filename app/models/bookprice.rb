@@ -12,7 +12,7 @@ class Bookprice < ActiveRecord::Base
 	end
 
 	def perform
-        @@logger.info("Performing job for #{self.isbn}"
+        @@logger.info("Performing job for #{self.isbn}")
         Rails.cache.fetch("#{self.isbn}", :expires_in => 1.day){self.prices(self.isbn)}
 	end
 
