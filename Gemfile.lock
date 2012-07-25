@@ -131,6 +131,7 @@ GEM
       hike (~> 1.2)
       rack (~> 1.0)
       tilt (~> 1.1, != 1.3.0)
+    sqlite3 (1.3.6)
     temple (0.4.0)
     therubyracer (0.10.1)
       libv8 (~> 3.3.10)
@@ -175,6 +176,7 @@ DEPENDENCIES
   rails (= 3.2.5)
   sass-rails (~> 3.2.3)
   slim
+  sqlite3
   therubyracer
   thin
   twitter-bootstrap-rails

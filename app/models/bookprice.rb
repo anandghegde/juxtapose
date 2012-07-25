@@ -1,5 +1,5 @@
-class Bookprice < ActiveRecord::Base
-	attr_accessor :isbn
+class Bookprice 
+    attr_accessor :isbn
     @@logger = Logger.new(STDOUT)
 	NOT_AVAILABLE=999_999
 	def initialize(given_isbn)
